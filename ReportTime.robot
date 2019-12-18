@@ -1,12 +1,12 @@
 # pip install robotframework
-# pip install --upgrade robotframework-selenium2library
+# pip install --upgrade robotframework-seleniumlibrary
 # choco install chromedriver
 
 *** Settings ***
 
 Library   Dialogs     # Built-in, but requires tkinter as part of Python install.
 # Library   Screenshot
-Library   Selenium2Library
+Library   SeleniumLibrary
 # https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
 
 *** Variables ***
