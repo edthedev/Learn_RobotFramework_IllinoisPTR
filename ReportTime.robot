@@ -18,15 +18,17 @@ ${PTRURL}   https://hrnet.uihr.uillinois.edu/PTRApplication/index.cfm?fuseaction
 User can fill in a standard 40 hour time card
 
   Open Browser    ${PTRURL}   ${BROWSER} 
+  Input Text   netid    delaport
   Execute Manual Step   Please Login
   # Click Element    xpath=(//div[@class="col-container"])[2]
-  Input Text    //input[@name="mondayTimesheetHourValue"]    8
+  # Input Text    //input[@name="mondayTimesheetHourValue"]    8
+  Input Text   mondayTimesheetHourValue  8
   # Click Element    xpath=(//div[@class="col-container"])[3]
-  Input Text    //input[@name="tuesdayTimesheetHourValue"]    8
+  # Input Text    //input[@name="tuesdayTimesheetHourValue"]    8
   # Click Element    xpath=(//div[@class="col-container"])[4]
-  Input Text    //input[@name="wednesdayTimesheetHourValue"]    8
+  # Input Text    //input[@name="wednesdayTimesheetHourValue"]    8
   # Click Element    xpath=(//div[@class="col-container"])[5]
-  Input Text    //input[@name="thursdayTimesheetHourValue"]    8
+  # Input Text    //input[@name="thursdayTimesheetHourValue"]    8
   # Click Element    xpath=(//div[@class="col-container"])[6]
-  Input Text    //input[@name="fridayTimesheetHourValue"]    8
+  # Input Text    //input[@name="fridayTimesheetHourValue"]    8
   # Click Element    //input[@name="btnSubmit"]
