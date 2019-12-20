@@ -5,6 +5,14 @@ Documentation   Let us learn to use this thing.
 ...   pip install --upgrade robotframework-seleniumlibrary
 ...   choco install chromedriver
 ...   pip install pyyaml.
+...   choco install vault
+...   choco install consul
+...   consul agent -dev # New Window
+...   vault server -config=./vaultconfig.hcl -address=http://127.0.0.1:8200 # New Window
+...   vault init  -address=http://127.0.0.1:8200
+...   $ENV:VAULT_ADDR="http://127.0.0.1:8200 # To match address on previous line
+...   cp login-example.robot login.robot # Add your login info
+...   vault kv put secret/login.robot value=@login.robot
 
 
 Resource  login.robot
