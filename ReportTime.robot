@@ -17,9 +17,7 @@ ${PTRURL}   https://hrnet.uihr.uillinois.edu/PTRApplication/index.cfm?fuseaction
 
 *** Keywords ***
 
-Fill In Overdue Form
-  Wait Until Page Contains Element  id:getPastDueTimeEntryForm
-  Click Element                     id:getPastDueTimeEntryForm
+Fill In Form
   Input Text        mondayTimesheetHourValue    8   clear=false
   Input Text        tuesdayTimesheetHourValue    8   clear=false
   Input Text        wednesdayTimesheetHourValue    8   clear=false
@@ -28,6 +26,11 @@ Fill In Overdue Form
   Execute Manual Step   Please Confirm or Correct Values then press Pass
   Click Element    //input[@name="btnSubmit"]
   Page Should contain     You have successfully submitted your time
+
+Fill In Overdue Form
+  Wait Until Page Contains Element  id:getPastDueTimeEntryForm
+  Click Element                     id:getPastDueTimeEntryForm
+  Run Keyword                       Fill In Form
 
 Fill Overdue Form Only If Needed
   ${overdue}=  Run Keyword And Return Status    Element Should Be Visible   id:getPastDueTimeEntryForm
@@ -46,3 +49,6 @@ User can fill in a standard 40 hour time card
   # Check and fill in for overdue
   Repeat Keyword    12 times      Fill Overdue Form Only If Needed
   Page Should Contain     No overdue time reports
+
+  # Run for today
+  Run Keyword                       Fill In Form
