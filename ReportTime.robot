@@ -35,26 +35,17 @@ User can fill in a standard 40 hour time card
   Input Text        netid       ${netid}
   Input Password    PASSWORD    ${pwd}
   Submit Form
+  Page should contain     Welcome
+  Page should contain     ${name}
   # Execute Manual Step   Please Login
-  # Maximize Browser Window
-  # Click Element    xpath=(//div[@class="col-container"])[2]
-  # Input Text    //input[@name="mondayTimesheetHourValue"]    8
-  # Handle Alert
+  # Wait Until Element Is Visible     input[@id="getPastDueTimeEntryForm"]
+  Wait Until Page Contains Element  input[@id="getPastDueTimeEntryForm"]
+  Click Element    input[@id="getPastDueTimeEntryForm"]
   Input Text        mondayTimesheetHourValue    8   clear=false
   Input Text        tuesdayTimesheetHourValue    8   clear=false
   Input Text        wednesdayTimesheetHourValue    8   clear=false
   Input Text        thursdayTimesheetHourValue    8   clear=false
   Input Text        fridayTimesheetHourValue    8   clear=false
-  # Click Element    xpath=(//div[@class="col-container"])[3]
-  # Input Text    //input[@name="tuesdayTimesheetHourValue"]    8
-  # Click Element    xpath=(//div[@class="col-container"])[4]
-  # Input Text    //input[@name="wednesdayTimesheetHourValue"]    8
-  # Click Element    xpath=(//div[@class="col-container"])[5]
-  # Input Text    //input[@name="thursdayTimesheetHourValue"]    8
-  # Click Element    xpath=(//div[@class="col-container"])[6]
-  # Input Text    //input[@name="fridayTimesheetHourValue"]    8
   # Click Element    //input[@name="btnSubmit"]
   
   # Verify via "You have successfully submitted your time"
-  ## Do it again...
-  # Click Element    input[@name="getTimeEntryForm"]
