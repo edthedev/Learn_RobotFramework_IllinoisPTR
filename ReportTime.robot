@@ -1,25 +1,13 @@
 *** Settings ***
 Documentation   Let us learn to use this thing.
 ...   Must do the following to setup:
+...   Install Python3, be sure to include tk / tkinter libraries
 ...   pip install robotframework
 ...   pip install --upgrade robotframework-seleniumlibrary
 ...   choco install chromedriver
-...   pip install pyyaml.
-...   choco install vault
-...   choco install consul
-...   consul agent -dev # New Window
-...   vault server -config=./vaultconfig.hcl -address=http://127.0.0.1:8200 # New Window
-...   vault init  -address=http://127.0.0.1:8200
-...   $ENV:VAULT_ADDR="http://127.0.0.1:8200 # To match address on previous line
-...   cp login-example.robot login.robot # Add your login info
-...   vault kv put secret/login.robot value=@login.robot
-
-Resource  login.robot
 
 Library   Dialogs     # Built-in, but requires tkinter as part of Python install.
-# Library   Screenshot
-Library   SeleniumLibrary
-# https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
+Library   SeleniumLibrary     # https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
 
 *** Variables ***
 
@@ -51,13 +39,10 @@ User can fill in a standard 40 hour time card
 
   # Get to the page
   Open Browser      ${PTRURL}   ${BROWSER} 
-  Input Text        netid       ${netid}
-  Input Password    PASSWORD    ${pwd}
-  Submit Form
+  Execute Manual Step   Please Login and then press Pass
   Page should contain               Welcome
   Page should contain               ${name}
 
   # Check and fill in for overdue
   Repeat Keyword    12 times      Fill Overdue Form Only If Needed
   Page Should Contain     No overdue time reports
-
