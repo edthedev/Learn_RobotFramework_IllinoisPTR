@@ -35,12 +35,11 @@ User can fill in a standard 40 hour time card
   Input Text        netid       ${netid}
   Input Password    PASSWORD    ${pwd}
   Submit Form
-  Page should contain     Welcome
-  Page should contain     ${name}
+  Page should contain               Welcome
+  Page should contain               ${name}
   # Execute Manual Step   Please Login
-  # Wait Until Element Is Visible     input[@id="getPastDueTimeEntryForm"]
-  Wait Until Page Contains Element  input[@id="getPastDueTimeEntryForm"]
-  Click Element    input[@id="getPastDueTimeEntryForm"]
+  Wait Until Page Contains Element  id:getPastDueTimeEntryForm
+  Click Element                     id:getPastDueTimeEntryForm
   Input Text        mondayTimesheetHourValue    8   clear=false
   Input Text        tuesdayTimesheetHourValue    8   clear=false
   Input Text        wednesdayTimesheetHourValue    8   clear=false
