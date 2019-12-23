@@ -45,6 +45,7 @@ User can fill in a standard 40 hour time card
   Input Text        wednesdayTimesheetHourValue    8   clear=false
   Input Text        thursdayTimesheetHourValue    8   clear=false
   Input Text        fridayTimesheetHourValue    8   clear=false
-  # Click Element    //input[@name="btnSubmit"]
+  Execute Manual Step   Please Confirm or Correct Values
+  Click Element    //input[@name="btnSubmit"]
   
   # Verify via "You have successfully submitted your time"
