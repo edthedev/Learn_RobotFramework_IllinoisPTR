@@ -14,7 +14,6 @@ Documentation   Let us learn to use this thing.
 ...   cp login-example.robot login.robot # Add your login info
 ...   vault kv put secret/login.robot value=@login.robot
 
-
 Resource  login.robot
 
 Library   Dialogs     # Built-in, but requires tkinter as part of Python install.
@@ -27,17 +26,10 @@ Library   SeleniumLibrary
 ${BROWSER}  googlechrome
 ${PTRURL}   https://hrnet.uihr.uillinois.edu/PTRApplication/index.cfm?fuseaction=TimeSheetEntryForm
 
-*** Test Cases ***
 
-User can fill in a standard 40 hour time card
+*** Keywords ***
 
-  Open Browser      ${PTRURL}   ${BROWSER} 
-  Input Text        netid       ${netid}
-  Input Password    PASSWORD    ${pwd}
-  Submit Form
-  Page should contain               Welcome
-  Page should contain               ${name}
-  # Execute Manual Step   Please Login
+Fill In Overdue Form
   Wait Until Page Contains Element  id:getPastDueTimeEntryForm
   Click Element                     id:getPastDueTimeEntryForm
   Input Text        mondayTimesheetHourValue    8   clear=false
@@ -45,7 +37,27 @@ User can fill in a standard 40 hour time card
   Input Text        wednesdayTimesheetHourValue    8   clear=false
   Input Text        thursdayTimesheetHourValue    8   clear=false
   Input Text        fridayTimesheetHourValue    8   clear=false
-  Execute Manual Step   Please Confirm or Correct Values
+  Execute Manual Step   Please Confirm or Correct Values then press Pass
   Click Element    //input[@name="btnSubmit"]
-  
-  # Verify via "You have successfully submitted your time"
+  Page Should contain     You have successfully submitted your time
+
+Fill Overdue Form Only If Needed
+  ${overdue}=  Run Keyword And Return Status    Element Should Be Visible   id:getPastDueTimeEntryForm
+  Run Keyword If    ${overdue}    Fill In Overdue Form
+
+*** Test Cases ***
+
+User can fill in a standard 40 hour time card
+
+  # Get to the page
+  Open Browser      ${PTRURL}   ${BROWSER} 
+  Input Text        netid       ${netid}
+  Input Password    PASSWORD    ${pwd}
+  Submit Form
+  Page should contain               Welcome
+  Page should contain               ${name}
+
+  # Check and fill in for overdue
+  Repeat Keyword    12 times      Fill Overdue Form Only If Needed
+  Page Should Contain     No overdue time reports
+
