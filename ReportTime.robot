@@ -40,7 +40,6 @@ User is logged in to PTR
   Open Browser      ${PTRURL}   ${BROWSER} 
   Execute Manual Step   Please Login and then press Pass
   Page should contain               Welcome
-  # Page should contain               ${name}
 
 User fills in all overdue time cards
   Repeat Keyword    12 times      Fill Overdue Form Only If Needed
