@@ -1,6 +1,10 @@
 
 ## Setup
 
+Robotframework is cross platform, but these installation instructions are Windows-specific.
+
+Install steps on Mac or Linux should actually be slightly simpler, but I do not want to publish them without testing them. A pull request to add Windows or Linux install instructions would be welcomed. 
+
 Requirements:
   - Python3 (be sure to include tk / tkinter library)
   - chromedriver
@@ -8,8 +12,8 @@ Requirements:
   - robotframework-seleniumlibrary
 
 Install steps:
-  - Install Python3 using the Python installer. ***Be sure to include tk / tkinter in the install options.***
-  - Install Chocolatey
+  - Install [Python3](https://www.python.org/downloads/windows/) using the Python installer. ***Be sure to include tk / tkinter in the install options.***
+  - Install [Chocolatey](https://chocolatey.org/install)
   - Run the following steps to use Pip and Chocolatey to install the remaining requirements.
 
 Once you have Python3 and Chocolatey installed, you can install the rest using the following commands:
