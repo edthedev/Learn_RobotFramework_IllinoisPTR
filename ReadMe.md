@@ -15,7 +15,7 @@ The process this script directly assists with is correctly and quickly filling i
 
 Robotframework is cross platform, but these installation instructions are Windows-specific.
 
-Install steps on Mac or Linux should actually be slightly simpler, but I do not want to publish them without testing them. A pull request to add Windows or Linux install instructions would be welcomed. 
+Install steps on Apple/Macintosh or Linux should actually be slightly simpler, but I do not want to publish them without testing them. A pull request to add Apple or Linux install instructions would be welcomed. 
 
 Requirements:
   - Python3 (be sure to include tk / tkinter library)
