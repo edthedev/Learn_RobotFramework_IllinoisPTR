@@ -52,3 +52,10 @@ User can fill in a standard 40 hour time card
 
   # Run for today
   Run Keyword                       Fill In Form
+
+User fills in their time card
+
+  Given user is logged in to PTR
+  When user fills in all overdue time cards
+  And user fills in latest time card
+  Then PTR shows user is up to date
