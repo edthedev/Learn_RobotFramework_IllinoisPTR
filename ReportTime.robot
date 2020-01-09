@@ -1,6 +1,6 @@
 *** Settings ***
-Documentation   Let us learn to use this thing.
-...   Must do the following to setup:
+Documentation   Assists users in quickly filling out and verifying their PTR time cards
+...   Windows users must do the following to setup:
 ...   Install Python3, be sure to include tk / tkinter libraries
 ...   pip install robotframework
 ...   pip install --upgrade robotframework-seleniumlibrary
@@ -36,24 +36,25 @@ Fill Overdue Form Only If Needed
   ${overdue}=  Run Keyword And Return Status    Element Should Be Visible   id:getPastDueTimeEntryForm
   Run Keyword If    ${overdue}    Fill In Overdue Form
 
-*** Test Cases ***
-
-User can fill in a standard 40 hour time card
-
-  # Get to the page
+User is logged in to PTR
   Open Browser      ${PTRURL}   ${BROWSER} 
   Execute Manual Step   Please Login and then press Pass
   Page should contain               Welcome
-  Page should contain               ${name}
+  # Page should contain               ${name}
 
-  # Check and fill in for overdue
+User fills in all overdue time cards
   Repeat Keyword    12 times      Fill Overdue Form Only If Needed
   Page Should Contain     No overdue time reports
 
-  # Run for today
+User fills in latest time card
   Run Keyword                       Fill In Form
 
-User fills in their time card
+PTR shows user is up to date
+  Page Should Contain     No overdue time reports
+
+*** Test Cases ***
+
+User gets PTR up to date by filling in any cards
 
   Given user is logged in to PTR
   When user fills in all overdue time cards
