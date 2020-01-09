@@ -1,4 +1,15 @@
 
+## About
+
+This repository contains a single file `ReportTime.robot` which contains examples of concepts needed to do many web application verification steps in RobotFramework.
+
+The purpose of RobotFramework is to speed up verification that important functionality remains intact when upgrading web applications and web application servers.
+This purpose of this example script is to help familiarize maintainers of web application servers with the capabilities available for free from RobotFramework.
+
+The end goal is to increase the assurance, availability, reliability and patch frequency of systems maintained by State of Illinois employees, as they adopt RobotFramework and are able to patch web software systems with greater confidence.
+
+The process this script directly assists with is correctly and quickly filling in Positive Time Report forms for State of Illinois employees.
+
 ## Setup
 
 Robotframework is cross platform, but these installation instructions are Windows-specific.
