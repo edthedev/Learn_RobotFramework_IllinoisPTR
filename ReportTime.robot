@@ -1,10 +1,22 @@
 *** Settings ***
 Documentation   Assists users in quickly filling out and verifying their PTR time cards
+...   This script removes a lot of clicking and typing, but is still an interactive process.
+...   The script assumes a baseline of 40 hours, and will pause at each form to let you input corrected numbers for any time off. 
+...
 ...   Windows users must do the following to setup:
+...   Install Chocolatey package manager
 ...   Install Python3, be sure to include tk / tkinter libraries
+...   
+...   One time setup as admin:
 ...   pip install robotframework
 ...   pip install --upgrade robotframework-seleniumlibrary
 ...   choco install chromedriver
+...
+...   Occasionally update (as admin):
+...   choco update chromedriver
+...
+...   To report time (not as admin):
+...   robot ./ReportTime.robot
 
 Library   Dialogs     # Built-in, but requires tkinter as part of Python install.
 Library   SeleniumLibrary     # https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
