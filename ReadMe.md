@@ -28,7 +28,9 @@ Install steps:
   - Install [Chocolatey](https://chocolatey.org/install)
   - Run the following steps to use Pip and Chocolatey to install the remaining requirements.
 
-Once you have Python3 and Chocolatey installed, you can install the rest using the following commands:
+Once you have Python3 and Chocolatey installed, you can install the rest using the following commands.
+
+Run these commands as **Administrator**:
 
 ```powershell
 pip install robotframework
