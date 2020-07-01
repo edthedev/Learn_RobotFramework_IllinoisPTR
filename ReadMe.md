@@ -34,6 +34,7 @@ Run these commands as **Administrator**:
 
 ```powershell
 pip install robotframework
+pip install wheel
 pip install --upgrade robotframework-seleniumlibrary
 choco install chromedriver
 ```
