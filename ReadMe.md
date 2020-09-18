@@ -11,6 +11,17 @@ The purpose of this example script is to help familiarize maintainers of web app
 
 The process this script directly assists with is correctly and quickly filling in Positive Time Report forms for State of Illinois employees.
 
+## Manual Steps
+
+This script will not login for you, or set your exact time values. The script will pause for user input at those two steps, as shown below.
+
+1. Pause to login.
+![screenshot of login manual step](./img/Login.PNG)
+
+2. Pause to correct any incorrect default values.
+![screenshot of time submission manual step](./img/PleaseConfirmCorrectValues.PNG)
+
+
 ## Setup
 
 Robotframework is cross platform, but these installation instructions are Windows-specific.
