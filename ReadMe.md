@@ -46,6 +46,15 @@ Run the command like so:
 robot .\ReportTime.robot
 ```
 
+If you see this message:
+> SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version XX
+
+Run this command as administrator:
+
+```powershell
+choco upgrade chromedriver
+```
+
 ## Using the tool
 
 - The browser will pause on the login page.
