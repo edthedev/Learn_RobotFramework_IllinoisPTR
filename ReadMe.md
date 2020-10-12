@@ -7,7 +7,7 @@ The purpose of RobotFramework is to speed up verification that important functio
 
 Using RobotFramework can increase the assurance, availability, reliability and patch frequency of web application systems by increasing confidence in the reliability and testability of software releases, allowing a faster and more trusted software update cycle.
 
-The purpose of this example script is to help familiarize maintainers of web application servers with the capabilities available for through the free and open source tool, RobotFramework. 
+The purpose of this example script is to help familiarize maintainers of web application servers with the capabilities available through the free and open source tool, RobotFramework. 
 
 The process this script directly assists with is correctly and quickly filling in Positive Time Report forms for State of Illinois employees.
 
