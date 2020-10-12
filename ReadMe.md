@@ -18,7 +18,7 @@ This script will not login for you, or set your exact time values. The script wi
 1. Pause to login.
 ![screenshot of login manual step](./img/Login.PNG)
 
-2. Pause to correct any incorrect default values. State employees are required to periodically submit timesheets documenting the time spent each day on official business to the nearest quarter hour (increments of .25 in this interface.)
+2. Pause to correct any incorrect default values. State employees are required to periodically submit timesheets documenting the time spent each day on official business to the nearest quarter hour (increments of 15 minutes in this interface.)
 ![screenshot of time submission manual step](./img/PleaseConfirmCorrectValues.PNG)
 
 
