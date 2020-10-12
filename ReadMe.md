@@ -70,7 +70,7 @@ choco upgrade chromedriver
 
 - The browser will pause on the login page.
 - A small pop-up will appear, asking you to press 'Pass' to resume the script once you are logged in.
-- You will be prompted to verify each week of data. 40 hours will be pre-filled. Make any changes and then press 'Pass' again.
+- You will be prompted to verify each week of data. 40 hours will be pre-filled. Make any changes needed. When the web interface reflects your time spent on University business to the nearest quarter hour, then press 'Pass' again.
 - The script will continue to prompt you until your overdue time reports have been verified and submitted.
 - Abort at any time by closing the browser window.
 - The PTR application and this script will automatically pick up where you left off next time you visit.
