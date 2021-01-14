@@ -61,6 +61,7 @@ User fills in latest time card
   Run Keyword                       Fill In Form
 
 PTR shows user is up to date
+  Take Screenshot
   Page Should Contain     No overdue time reports
 
 *** Test Cases ***
