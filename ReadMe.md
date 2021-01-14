@@ -7,7 +7,7 @@ The purpose of RobotFramework is to speed up verification that important functio
 
 Using RobotFramework can increase the assurance, availability, reliability and patch frequency of web application systems by increasing confidence in the reliability and testability of software releases, allowing a faster and more trusted software update cycle.
 
-The purpose of this example script is to help familiarize maintainers of web application servers with the capabilities available for through the free and open source tool, RobotFramework. 
+The purpose of this example script is to help familiarize maintainers of web application servers with the capabilities available through the free and open source tool, RobotFramework. 
 
 The process this script directly assists with is correctly and quickly filling in Positive Time Report forms for State of Illinois employees.
 
@@ -18,7 +18,7 @@ This script will not login for you, or set your exact time values. The script wi
 1. Pause to login.
 ![screenshot of login manual step](./img/Login.PNG)
 
-2. Pause to correct any incorrect default values.
+2. Pause to correct any incorrect default values. State employees are required to periodically submit timesheets documenting the time spent each day on official business to the nearest quarter hour (increments of 15 minutes in this interface.)
 ![screenshot of time submission manual step](./img/PleaseConfirmCorrectValues.PNG)
 
 
@@ -70,7 +70,7 @@ choco upgrade chromedriver
 
 - The browser will pause on the login page.
 - A small pop-up will appear, asking you to press 'Pass' to resume the script once you are logged in.
-- You will be prompted to verify each week of data. 40 hours will be pre-filled. Make any changes and then press 'Pass' again.
+- You will be prompted to verify each week of data. 40 hours will be pre-filled. Make any changes needed. When the web interface reflects your time spent on University business to the nearest quarter hour, then press 'Pass' again.
 - The script will continue to prompt you until your overdue time reports have been verified and submitted.
 - Abort at any time by closing the browser window.
 - The PTR application and this script will automatically pick up where you left off next time you visit.
