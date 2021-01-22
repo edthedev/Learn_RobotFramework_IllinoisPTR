@@ -29,6 +29,7 @@ ${PTRURL}   https://hrnet.uihr.uillinois.edu/PTRApplication/index.cfm?fuseaction
 
 *** Keywords ***
 
+
 Fill In Form
   Input Text        mondayTimesheetHourValue    8   clear=false
   Input Text        tuesdayTimesheetHourValue    8   clear=false
@@ -63,6 +64,8 @@ User fills in latest time card
 PTR shows user is up to date
   Take Screenshot
   Page Should Contain     No overdue time reports
+  Maximize Browser Window
+  Execute javascript  document.body.style.zoom="70%"
 
 *** Test Cases ***
 
