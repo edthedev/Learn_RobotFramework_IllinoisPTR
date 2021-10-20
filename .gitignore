@@ -5,3 +5,4 @@ report.html
 debug.log
 selenium-screenshot-*
 login.robot
+*.PNG
