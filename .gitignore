@@ -6,3 +6,4 @@ debug.log
 selenium-screenshot-*
 login.robot
 *.PNG
+chrome-session
