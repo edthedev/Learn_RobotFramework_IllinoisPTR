@@ -6,14 +6,18 @@ Documentation   Assists users in quickly filling out and verifying their PTR tim
 ...   Windows users must do the following to setup:
 ...   Install Chocolatey package manager
 ...   Install Python3, be sure to include tk / tkinter libraries
+...   Choose the option in the MSI installer for Windows.
+...   On mac, brew install python-tk
 ...   
 ...   One time setup as admin:
 ...   pip install robotframework
 ...   pip install --upgrade robotframework-seleniumlibrary
-...   choco install chromedriver
+...   choco install chromedriver  # Windows
+...   brew install chromedriver  # Mac
 ...
 ...   Occasionally update (as admin):
-...   choco update chromedriver
+...   choco update chromedriver  # Windows
+...   brew upgrade chromedriver  # Mac
 ...
 ...   To report time (not as admin):
 ...   robot ./ReportTime.robot
