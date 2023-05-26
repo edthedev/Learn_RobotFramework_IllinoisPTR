@@ -10,4 +10,4 @@ chrome-session
 .env
 *.pyc
 # Time data files
-*.csv
+my_timecards.py
