@@ -8,5 +8,6 @@ login.robot
 *.PNG
 chrome-session
 .env
+*.pyc
 # Time data files
 *.csv
