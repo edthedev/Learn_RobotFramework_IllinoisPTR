@@ -56,6 +56,30 @@ Fill Time Card
   Input Text    wednesdayTimesheetHourValue    ${time_values}[wednesday]   clear=false
   Input Text    thursdayTimesheetHourValue    ${time_values}[thursday]   clear=false
   Input Text    fridayTimesheetHourValue    ${time_values}[friday]   clear=false
+
+  # Fill in half hour
+  ${half_hour}=    Evaluate    ${time_values}[monday]/.5%2==1
+  IF    ${half_hour}
+    Select From List by Value    mondayTimesheetMinuteValue    0.50
+  END
+  ${half_hour}=    Evaluate    ${time_values}[tuesday]/.5%2==1
+  IF    ${half_hour}
+    Select From List by Value    tuesdayTimesheetMinuteValue    0.50
+  END
+  ${half_hour}=    Evaluate    ${time_values}[wednesday]/.5%2==1
+  IF    ${half_hour}
+    Select From List by Value    wednesdayTimesheetMinuteValue    0.50
+  END
+  ${half_hour}=    Evaluate    ${time_values}[thursday]/.5%2==1
+  IF    ${half_hour}
+    Select From List by Value    thursdayTimesheetMinuteValue    0.50
+  END
+  ${half_hour}=    Evaluate    ${time_values}[friday]/.5%2==1
+  IF    ${half_hour}
+    Select From List by Value    fridayTimesheetMinuteValue    0.50
+  END
+
+
   # Click Element    //input[@name="btnSubmit"]
   Page Should contain     You have successfully submitted your time
 
