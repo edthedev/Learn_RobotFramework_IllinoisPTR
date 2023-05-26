@@ -92,3 +92,7 @@ User gets PTR up to date by filling in any cards
 Output:  C:\src\RobotFramework\output.xml
 Report:  C:\src\RobotFramework\report.html
 ```
+
+## Using Docker
+
+On Windows it can be helpful to run `Robot` scripts inside a `Docker` container.  See `run_in_docker.ps1`.

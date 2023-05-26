@@ -7,3 +7,6 @@ selenium-screenshot-*
 login.robot
 *.PNG
 chrome-session
+.env
+# Time data files
+*.csv
