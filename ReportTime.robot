@@ -57,28 +57,21 @@ Fill Time Card
   Input Text    thursdayTimesheetHourValue    ${time_values}[thursday]   clear=false
   Input Text    fridayTimesheetHourValue    ${time_values}[friday]   clear=false
 
-  # Fill in half hour
-  ${half_hour}=    Evaluate    ${time_values}[monday]/.5%2==1
-  IF    ${half_hour}
-    Select From List by Value    mondayTimesheetMinuteValue    0.50
-  END
-  ${half_hour}=    Evaluate    ${time_values}[tuesday]/.5%2==1
-  IF    ${half_hour}
-    Select From List by Value    tuesdayTimesheetMinuteValue    0.50
-  END
-  ${half_hour}=    Evaluate    ${time_values}[wednesday]/.5%2==1
-  IF    ${half_hour}
-    Select From List by Value    wednesdayTimesheetMinuteValue    0.50
-  END
-  ${half_hour}=    Evaluate    ${time_values}[thursday]/.5%2==1
-  IF    ${half_hour}
-    Select From List by Value    thursdayTimesheetMinuteValue    0.50
-  END
-  ${half_hour}=    Evaluate    ${time_values}[friday]/.5%2==1
-  IF    ${half_hour}
-    Select From List by Value    fridayTimesheetMinuteValue    0.50
-  END
+  # Fill in minutes to nearest quarter hour
+  ${mon_minutes}=    Evaluate    "{:.2f}".format(${time_values}[monday]*4%4*.25)
+  Select From List by Value    mondayTimesheetMinuteValue    ${mon_minutes}
 
+  ${tue_minutes}=    Evaluate    "{:.2f}".format(${time_values}[tuesday]*4%4*.25)
+  Select From List by Value    tuesdayTimesheetMinuteValue    ${tue_minutes}
+
+  ${wed_minutes}=    Evaluate    "{:.2f}".format(${time_values}[wednesday]*4%4*.25)
+  Select From List by Value    wednesdayTimesheetMinuteValue    ${wed_minutes}
+
+  ${thu_minutes}=    Evaluate    "{:.2f}".format(${time_values}[thursday]*4%4*.25)
+  Select From List by Value    thursdayTimesheetMinuteValue    ${thu_minutes}
+
+  ${fri_minutes}=    Evaluate    "{:.2f}".format(${time_values}[friday]*4%4*.25)
+  Select From List by Value    fridayTimesheetMinuteValue    ${fri_minutes}
 
   # Click Element    //input[@name="btnSubmit"]
   Page Should contain     You have successfully submitted your time
