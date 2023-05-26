@@ -73,17 +73,9 @@ Fill Time Card
   ${fri_minutes}=    Evaluate    "{:.2f}".format(${time_values}[friday]*4%4*.25)
   Select From List by Value    fridayTimesheetMinuteValue    ${fri_minutes}
 
-  # Click Element    //input[@name="btnSubmit"]
+  Click Element    //input[@name="btnSubmit"]
   Page Should contain     You have successfully submitted your time
 
-Fill In Overdue Form
-  Wait Until Page Contains Element  id:getPastDueTimeEntryForm
-  Click Element                     id:getPastDueTimeEntryForm
-  Run Keyword                       Fill In Form
-
-Fill Overdue Form Only If Needed
-  ${overdue}=  Run Keyword And Return Status    Element Should Be Visible   id:getPastDueTimeEntryForm
-  Run Keyword If    ${overdue}    Fill In Overdue Form
 
 User is logged in to PTR
   Open Browser      ${PTRURL}   ${BROWSER} 
@@ -93,13 +85,6 @@ User is logged in to PTR
   # Take Screenshot
   Click Element     BTN_LOGIN
   Page should contain               Welcome
-
-User fills in all overdue time cards
-  Repeat Keyword    12 times      Fill Overdue Form Only If Needed
-  Page Should Contain     No overdue time reports
-
-User fills in latest time card
-  Run Keyword                       Fill In Form
 
 User Fills Past Due Time Cards
    FOR    ${week}    IN    @{TIMECARDS.keys()}
