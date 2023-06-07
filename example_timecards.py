@@ -20,5 +20,5 @@ TIMECARDS = {
 		'friday': 7,
 	},
 	# A week with standard hours
-	'05/14/2023': CIVIL_SERVICE_STANDARD
+	'05/14/2023': CIVIL_SERVICE_STANDARD,
 }
