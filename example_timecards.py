@@ -9,10 +9,19 @@ CIVIL_SERVICE_STANDARD = {
 		'friday': 7.5,
 }
 
+OUT_OF_OFFICE_ALL_WEEK = {
+		'monday': 0, 
+		'tuesday': 0,
+		'wednesday': 0, 
+		'thursday': 0, 
+		'friday': 0,
+}
 
+# The keys in this dictionary should all be a Sunday
+# indicating which week to fill in.
 TIMECARDS = {
 	# Example week with flexible hours
-	'05/07/2023': {
+	'05/07/2023': { 
 		'monday': 7.75, 
 		'tuesday': 7.5,
 		'wednesday': 7.25, 
@@ -21,4 +30,6 @@ TIMECARDS = {
 	},
 	# A week with standard hours
 	'05/14/2023': CIVIL_SERVICE_STANDARD,
+	# A week of vacation
+	'05/21/2023': OUT_OF_OFFICE_ALL_WEEK,
 }
