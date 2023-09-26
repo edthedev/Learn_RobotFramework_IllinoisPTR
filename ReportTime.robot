@@ -84,6 +84,7 @@ User is logged in to PTR
   Input Text        easpass    %{EASPASS}       clear=false
   # Take Screenshot
   Click Element     BTN_LOGIN
+  # Did you set the necessary environment variables?
   Page should contain               Welcome
 
 User Fills Past Due Time Cards
