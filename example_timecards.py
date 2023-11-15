@@ -17,6 +17,15 @@ OUT_OF_OFFICE_ALL_WEEK = {
 		'friday': 0,
 }
 
+MONDAY_OFF = CIVIL_SERVICE_STANDARD.copy()
+MONDAY_OFF['monday'] = 0
+
+WED_OFF = CIVIL_SERVICE_STANDARD.copy()
+WED_OFF['wednesday'] = 0
+
+FRIDAY_OFF = CIVIL_SERVICE_STANDARD.copy()
+FRIDAY_OFF['friday'] = 0
+
 # The keys in this dictionary should all be a Sunday
 # indicating which week to fill in.
 TIMECARDS = {
