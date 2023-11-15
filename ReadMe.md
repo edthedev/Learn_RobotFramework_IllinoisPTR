@@ -96,3 +96,5 @@ Report:  C:\src\RobotFramework\report.html
 ## Using Docker
 
 On Windows it can be helpful to run `Robot` scripts inside a `Docker` container.  See `run_in_docker.ps1`.
+
+The `docker info` command can be helpful when debugging whether Docker is configured and running.
