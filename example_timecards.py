@@ -26,6 +26,9 @@ WED_OFF['wednesday'] = 0
 FRIDAY_OFF = CIVIL_SERVICE_STANDARD.copy()
 FRIDAY_OFF['friday'] = 0
 
+HALF_DAY_FRIDAY = CIVIL_SERVICE_STANDARD.copy()
+HALF_DAY_FRIDAY['friday'] = 3.75
+
 # The keys in this dictionary should all be a Sunday
 # indicating which week to fill in.
 TIMECARDS = {
