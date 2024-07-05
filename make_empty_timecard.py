@@ -14,5 +14,5 @@ foo = LAST_CARD_FILLED
 
 while foo<datetime.datetime.today():
     foo += datetime.timedelta(days=7)
-    pretty_date = foo.date().strftime(r'%m/%d/%y')
+    pretty_date = foo.date().strftime(r'%m/%d/%Y')
     print(f"'{pretty_date}': UNSET,")
