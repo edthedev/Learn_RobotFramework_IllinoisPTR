@@ -8,44 +8,75 @@ CIVIL_SERVICE_STANDARD = {
 		'thursday': 7.5, 
 		'friday': 7.5,
 }
-
 STANDARD = CIVIL_SERVICE_STANDARD
 
 MONDAY_OFF = CIVIL_SERVICE_STANDARD.copy()
 MONDAY_OFF['monday'] = 0
 
-WED_OFF = CIVIL_SERVICE_STANDARD.copy()
-WED_OFF['wednesday'] = 0
+MONDAY_AND_FRIDAY_OFF = CIVIL_SERVICE_STANDARD.copy()
+MONDAY_AND_FRIDAY_OFF['monday'] = 0
+MONDAY_AND_FRIDAY_OFF['friday'] = 0
 
-THU_OFF = CIVIL_SERVICE_STANDARD.copy()
-THU_OFF['thursday'] = 0
+MONDAY_OFF_FRIDAY_HALF = CIVIL_SERVICE_STANDARD.copy()
+MONDAY_OFF_FRIDAY_HALF['monday'] = 0
+MONDAY_OFF_FRIDAY_HALF['friday'] = 3.75
+
+
+HALF_DAY_MON = CIVIL_SERVICE_STANDARD.copy()
+HALF_DAY_MON['monday'] = 3.75
+
+HALF_DAY_MON_AND_TUE = CIVIL_SERVICE_STANDARD.copy()
+HALF_DAY_MON_AND_TUE['monday'] = 3.75
+HALF_DAY_MON_AND_TUE['tuesday'] = 3.75
+
+
+HALF_DAY_TUE = CIVIL_SERVICE_STANDARD.copy()
+HALF_DAY_TUE['tuesday'] = 3.75
 
 HALF_DAY_THURS = CIVIL_SERVICE_STANDARD.copy()
 HALF_DAY_THURS['thursday'] = 3.75
 
+HALF_DAY_FRI = CIVIL_SERVICE_STANDARD.copy()
+HALF_DAY_FRI['friday'] = 3.75
+
+
 FRIDAY_OFF = CIVIL_SERVICE_STANDARD.copy()
 FRIDAY_OFF['friday'] = 0
 
-HALF_DAY_FRIDAY = CIVIL_SERVICE_STANDARD.copy()
-HALF_DAY_FRIDAY['friday'] = 3.75
 
+OUT_TUE = CIVIL_SERVICE_STANDARD.copy()
+OUT_TUE['tuesday'] = 0
 
-OUT_WED_THURS = CIVIL_SERVICE_STANDARD.copy()
-OUT_WED_THURS['wednesday'] = 0
-OUT_WED_THURS['thursday'] = 0
+OUT_TUE_AND_WED = CIVIL_SERVICE_STANDARD.copy()
+OUT_TUE_AND_WED['tuesday'] = 0
+OUT_TUE_AND_WED['wednesday'] = 0
 
-OUT_THURS_FRI = CIVIL_SERVICE_STANDARD.copy()
-OUT_THURS_FRI['thursday'] = 0
-OUT_THURS_FRI['friday'] = 0
+OUT_WED = CIVIL_SERVICE_STANDARD.copy()
+OUT_WED['wednesday'] = 0
 
+OUT_THU = CIVIL_SERVICE_STANDARD.copy()
+OUT_THU['thursday'] = 0
 
-OUT_OF_OFFICE_ALL_WEEK = {
-		'monday': 0, 
-		'tuesday': 0,
-		'wednesday': 0, 
-		'thursday': 0, 
-		'friday': 0,
+OUT_WED_THU = CIVIL_SERVICE_STANDARD.copy()
+OUT_WED_THU['wednesday'] = 0
+OUT_WED_THU['thursday'] = 0
+
+OUT_THU_FRI = CIVIL_SERVICE_STANDARD.copy()
+OUT_THU_FRI['thursday'] = 0
+OUT_THU_FRI['friday'] = 0
+
+OUT_ALL_WEEK = {
+	'monday': 0, 
+	'tuesday': 0,
+	'wednesday': 0, 
+	'thursday': 0, 
+	'friday': 0
 }
+
+WORK_THU_FRI = OUT_ALL_WEEK.copy()
+WORK_THU_FRI['thursday'] = 7.5
+WORK_THU_FRI['friday'] = 7.5
+
 
 # The keys in this dictionary should all be a Sunday
 # indicating which week to fill in.
