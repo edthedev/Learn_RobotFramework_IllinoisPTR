@@ -11,4 +11,4 @@ chrome-session
 *.pyc
 # Time data files
 my_timecards.py
-old_timecards.py
+old_timecards.*
