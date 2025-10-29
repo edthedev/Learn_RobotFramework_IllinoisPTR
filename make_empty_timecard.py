@@ -1,3 +1,4 @@
+#!/usr/bin/python
 """
 Prints a block of past timecard data to paste into `my_timecards.py`.
 
@@ -8,11 +9,15 @@ Paste the results into `my_timecards.py` and update as needed,
 to reflect time spent on University business, before running the robot script.
 """
 
-import datetime
-LAST_CARD_FILLED = datetime.datetime(2024,3,17)
-foo = LAST_CARD_FILLED
+from datetime import datetime as dt
+from datetime import timedelta
 
-while foo<datetime.datetime.today():
-    foo += datetime.timedelta(days=7)
-    pretty_date = foo.date().strftime(r'%m/%d/%Y')
+text = input('Enter earliest un-filled time card date in format YYYY.DD.MM')
+
+last_card = dt.strptime(text, '%Y.%m.%d')
+card = last_card
+
+while card<dt.today():
+    pretty_date = card.date().strftime(r'%m/%d/%Y')
     print(f"'{pretty_date}': UNSET,")
+    card += timedelta(days=7)

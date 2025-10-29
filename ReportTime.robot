@@ -29,7 +29,7 @@ Library   SeleniumLibrary     # https://robotframework.org/SeleniumLibrary/Selen
 Library   Screenshot
 Library   OperatingSystem
 
-Variables   ${CURDIR}${/}my_timecards.py
+Variables   ${CURDIR}${/}timecards.py
 
 *** Variables ***
 
