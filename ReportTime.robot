@@ -12,8 +12,8 @@ Documentation   Assists users in quickly filling out and verifying their PTR tim
 ...   One time setup as admin:
 ...   pip install robotframework
 ...   pip install --upgrade robotframework-seleniumlibrary
-...   choco install chromedriver  # Windows
-...   brew install chromedriver  # Mac
+...   choco install geckodriver # Windows
+...   brew install geckodriver # Mac
 ...
 ...   Occasionally update (as admin):
 ...   choco update chromedriver  # Windows
@@ -24,7 +24,6 @@ Documentation   Assists users in quickly filling out and verifying their PTR tim
 ...
 ...   Pro tip - for half hours hit tab-3 to select the third item in the drop down
 
-# Library   Dialogs     # Built-in, but requires tkinter as part of Python install.
 Library   SeleniumLibrary     # https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
 Library   Screenshot
 Library   OperatingSystem
@@ -33,8 +32,9 @@ Variables   ${CURDIR}${/}timecards.py
 
 *** Variables ***
 
-${BROWSER}  googlechrome
+${BROWSER}  firefox
 ${PTRURL}   https://hrnet.uihr.uillinois.edu/PTRApplication/index.cfm?fuseaction=TimeSheetEntryForm
+${USEENV}   False
 
 
 *** Test Cases ***
@@ -80,10 +80,13 @@ Fill Time Card
 User is logged in to PTR
   Open Browser      ${PTRURL}   ${BROWSER} 
   # %{ } - environemnt var
-  Input Text        netid      %{USER}          clear=false
-  Input Text        easpass    %{EASPASS}       clear=false
-  # Take Screenshot
-  Click Element     BTN_LOGIN
+  IF  ${USEENV}
+    Input Text        netid      %{USER}          clear=false
+    Input Text        easpass    %{EASPASS}       clear=false
+    Click Element     BTN_LOGIN
+  ELSE
+    Wait Until Page Contains    Welcome     60
+  END
   # Did you set the necessary environment variables?
   Page should contain               Welcome
 

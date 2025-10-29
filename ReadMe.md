@@ -13,14 +13,9 @@ The process this script directly assists with is correctly and quickly filling i
 
 ## Manual Steps
 
-This script will not login for you, or set your exact time values. The script will pause for user input at those two steps, as shown below.
+This script will not set your exact time values.
 
-1. Pause to login.
-![screenshot of login manual step](./img/Login.PNG)
-
-2. Pause to correct any incorrect default values. State employees are required to periodically submit timesheets documenting the time spent each day on official business to the nearest quarter hour (increments of 15 minutes in this interface.)
-![screenshot of time submission manual step](./img/PleaseConfirmCorrectValues.PNG)
-
+Fill in your timecard data into `timecards.py`, and let the script tediously type it into the web interface for you.
 
 ## Setup
 
@@ -36,18 +31,27 @@ Requirements:
 
 Install steps:
   - Install [Python3](https://www.python.org/downloads/windows/) using the Python installer. ***Be sure to include tk / tkinter in the install options.***
-  - Install [Chocolatey](https://chocolatey.org/install)
+  - Install [Chocolatey](https://chocolatey.org/install) or Brew
   - Run the following steps to use Pip and Chocolatey to install the remaining requirements.
 
 Once you have Python3 and Chocolatey installed, you can install the rest using the following commands.
 
-Run these commands as **Administrator**:
-
-```powershell
+```sh
 pip install robotframework
 pip install wheel
 pip install --upgrade robotframework-seleniumlibrary
+```
+
+This command may need to run as **Administrator**:
+
+```pwsh
 choco install chromedriver
+```
+
+Or
+
+```pwsh
+brew install chromedriver
 ```
 
 ## Running the Robotframewok script
@@ -60,21 +64,26 @@ robot .\ReportTime.robot
 If you see this message:
 > SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version XX
 
-Run this command as administrator:
+Run this command (may require administrator privileges):
 
 ```powershell
 choco upgrade chromedriver
 ```
 
+or 
+
+```powershell
+brew upgrade chromedriver
+```
+
 ## Using the tool
 
-- The browser will pause on the login page.
-- A small pop-up will appear, asking you to press 'Pass' to resume the script once you are logged in.
-- You will be prompted to verify each week of data. 40 hours will be pre-filled. Make any changes needed. When the web interface reflects your time spent on University business to the nearest quarter hour, then press 'Pass' again.
-- The script will continue to prompt you until your overdue time reports have been verified and submitted.
+- Create `timecards.py` from `example_timecards.py`, and fill in your time. Weeks are keyed by the date of the Sunday of that week. Some examples are included in `example_timecards.py`.
+- The browser will pause on the login page for about 60 seconds. Login during this time. This duration can be adjusted in the script.
+- The script will open and fill out any time periods in the data in `timecards.py` 
 - Abort at any time by closing the browser window.
 - The PTR application and this script will automatically pick up where you left off next time you visit.
-- The browser window will close automatically once you are caught up.
+- Close any stray browser windows.
 
 ## Command line output
 
@@ -93,8 +102,8 @@ Output:  C:\src\RobotFramework\output.xml
 Report:  C:\src\RobotFramework\report.html
 ```
 
-## Using Docker
+## Run Inside a Container
 
-On Windows it can be helpful to run `Robot` scripts inside a `Docker` container.  See `run_in_docker.ps1`.
+On Windows it can be helpful to run `Robot` scripts inside an Open Container Initiative (OCI) runner such as `Podman` or `Docker`.  See `run_in_podman.ps1` and `run_in_docker.ps1` for example commands.
 
-The `docker info` command can be helpful when debugging whether Docker is configured and running.
+The `podman info` and `docker info` commands can be helpful when debugging whether the selected OCI tool is configured and running.
